@@ -224,6 +224,5 @@ def winning_team
   else
   game_hash[:away][:team_name]
   end
-
   #[home_total, away_total].max
 end
