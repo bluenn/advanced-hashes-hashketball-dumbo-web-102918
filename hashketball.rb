@@ -226,3 +226,19 @@ def winning_team
   end
   #[home_total, away_total].max
 end
+
+def player_with_longest_name
+  home_players = game_hash[:home][:players].keys
+  home_player = home_players.max_by(&:length)
+
+  away_players = game_hash[:away][:players].keys
+  away_player = away_players.max_by(&:length)
+
+  if home_player.length > away.player.length
+    home_player
+ else
+   away_player
+ end
+end    
+
+
