@@ -227,6 +227,3 @@ def winning_team
 
   #[home_total, away_total].max
 end
-
-
-
