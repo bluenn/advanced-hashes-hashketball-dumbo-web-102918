@@ -242,3 +242,42 @@ def player_with_longest_name
 end
 
 
+def most_steals
+  max_home = 0
+  max_away = 0
+  home_player = ""
+  away_player = ""
+  game_hash[:home][:players].select do |player_name, player_info|
+      if max_home == 0
+        max_home = player_info[:steals]
+        home_player = player_name
+      elsif player_info[:steals] > max_home
+        max_home = player_info[:steals]
+        home_player = player_name
+    end
+  end
+  game_hash[:away][:players].select do |player_name, player_info|
+    if max_away == 0
+      max_away = player_info[:steals]
+      away_player = player_name
+    elsif player_info[:steals] > max_away
+      max_away = player_info[:steals]
+      away_player = player_name
+    end
+  end
+
+  if max_home > max_away
+    home_player
+  else
+    away_player
+  end
+end
+
+def long_name_steals_a_ton
+  if most_steals == player_with_longest_name
+    true
+ else
+   false
+ end
+end 
+   
