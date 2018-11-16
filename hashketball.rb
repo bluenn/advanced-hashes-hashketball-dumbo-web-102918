@@ -202,3 +202,23 @@ def most_points_scored
     away_player
   end
 end
+
+
+def winning_team
+  
+  home_points = []
+  away_points = []
+  game_hash[:home][:players].select do |player_name, player_info|
+    home_points <<player_info[:points]
+  end
+   
+  game_hash[:away][:players].select do |player_name, player_info|
+    away_points << player_info[:points]
+  end
+  home_total = home_points.sum
+  away_total = away_points.sum
+  
+end
+
+
+
