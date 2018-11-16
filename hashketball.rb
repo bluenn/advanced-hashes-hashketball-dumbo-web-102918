@@ -234,11 +234,11 @@ def player_with_longest_name
   away_players = game_hash[:away][:players].keys
   away_player = away_players.max_by(&:length)
 
-  if home_player.length > away.player.length
+  if home_player.length > away_player.length
     home_player
  else
    away_player
  end
-end    
+end
 
 
